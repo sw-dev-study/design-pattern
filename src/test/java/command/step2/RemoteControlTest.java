@@ -52,6 +52,33 @@ public class RemoteControlTest {
     }
 
     @Test
+    @DisplayName("Remote Controll의 각 슬롯에 람다를 이용하여 Command를 등록한다.")
+    public void remoteControlLamdaTest() {
+        final int slotSize = 7;
+        Invoker remoteControl = new RemoteControl(slotSize);
+
+        OutDoorLight outDoorLight = new OutDoorLight();
+        remoteControl.setOnCommand(1,
+            outDoorLight::on,
+            outDoorLight::off
+        );
+
+        CellingLight CellingLight = new CellingLight();
+        remoteControl.setOnCommand(2,
+            CellingLight::on,
+            CellingLight::off
+        );
+
+        remoteControl.printMenu();
+
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.onButtonWasPushed(2);
+
+        remoteControl.offButtonWasPushed(1);
+        remoteControl.offButtonWasPushed(2);
+    }
+
+    @Test
     @DisplayName("Remote Controll의 크기를 벗어나는 슬롯에 Command를 할당하는 경우, IllegalArgumentException이 발생한다.")
     public void remoteControlOutOfIndex() {
         final int slotSize = 0;
