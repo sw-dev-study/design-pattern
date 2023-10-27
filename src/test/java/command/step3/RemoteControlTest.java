@@ -1,5 +1,6 @@
 package command.step3;
 
+import command.step3.command.MacroCommand;
 import command.step3.command.NoCommand;
 import command.step3.command.fan.CeilingFanHighCommand;
 import command.step3.command.fan.CeilingFanOnCommand;
@@ -11,6 +12,8 @@ import command.step3.receiver.fan.CeilingFan;
 import command.step3.receiver.light.OutDoorLight;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 public class RemoteControlTest {
     @Test
@@ -79,6 +82,25 @@ public class RemoteControlTest {
 
         remoteControl.setOnCommand(1,
             new CeilingFanHighCommand(ceilingFan),
+            NoCommand.getInstance()
+        );
+        remoteControl.printMenu();
+
+        remoteControl.onButtonWasPushed(1);
+        remoteControl.undoButtonWasPushed();
+    }
+
+    @Test
+    @DisplayName("MacroCommand 테스트")
+    public void macroCommandTest() {
+        Invoker remoteControl = new RemoteControl(1);
+
+        CeilingFan ceilingFan = new CeilingFan();
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanOnCommand ceilingFanOnCommand = new CeilingFanOnCommand(ceilingFan);
+
+        remoteControl.setOnCommand(1,
+            new MacroCommand(List.of(ceilingFanOnCommand, ceilingFanHighCommand)),
             NoCommand.getInstance()
         );
         remoteControl.printMenu();
