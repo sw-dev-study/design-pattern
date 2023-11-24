@@ -1,6 +1,6 @@
 package edu.design.pattern.state.step2.state;
 
-public sealed interface State permits SoldOutState, NoQuarterState, HasQuarterState, SoldState {
+public sealed interface State permits SoldOutState, NoQuarterState, HasQuarterState, SoldState, WinnerState {
     /**
      * 동전 넣기
      */
