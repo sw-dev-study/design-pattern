@@ -62,8 +62,6 @@ public class HomeTheaterTest {
 //        6. 팝콘기계를 끈다.
         popcornPopper.off();
 
-
-
     }
     @Test
     @DisplayName("홈시어터 테스트 - 파사드를 통한 홈시어터 on테스트")

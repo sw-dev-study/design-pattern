@@ -35,4 +35,10 @@ public class TheaterLights {
         }
 
     }
+    //조명을 부순다
+    protected void breakLight(){
+
+        this.status = false;
+        System.out.println("조명을 부순다.....");
+    }
 }
