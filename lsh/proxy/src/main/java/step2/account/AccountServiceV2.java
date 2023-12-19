@@ -3,11 +3,11 @@ package step2.account;
 import java.util.List;
 import java.util.Set;
 
-public class AccountServiceV1 {
+public class AccountServiceV2 {
 
-    private AccountRepositoryV1 accountRepository;
+    private AccountRepositoryV2 accountRepository;
 
-    public AccountServiceV1(AccountRepositoryV1 accountRepository){
+    public AccountServiceV2(AccountRepositoryV2 accountRepository){
         this.accountRepository = accountRepository;
     }
 

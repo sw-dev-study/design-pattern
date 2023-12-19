@@ -1,10 +1,10 @@
-package step2.credit;
+package step3.credit;
 
-public class CreditInfoServiceV2Impl implements CreditInfoService{
+public class CreditInfoServiceV3Impl implements CreditInfoService {
 
     private int creditScore;
 
-    public CreditInfoServiceV2Impl(int userId){
+    public CreditInfoServiceV3Impl(int userId){
 
         try{
             Thread.sleep(5000);

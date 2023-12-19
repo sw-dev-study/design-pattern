@@ -1,13 +1,13 @@
-package step2.account;
+package step3.account;
 
 import java.util.List;
 import java.util.Set;
 
-public class AccountServiceV2 {
+public class AccountServiceV3 implements Account{
 
-    private AccountRepositoryV2 accountRepository;
+    private AccountRepositoryV3 accountRepository;
 
-    public AccountServiceV2(AccountRepositoryV2 accountRepository){
+    public AccountServiceV3(AccountRepositoryV3 accountRepository){
         this.accountRepository = accountRepository;
     }
 

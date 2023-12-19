@@ -1,4 +1,4 @@
-package origin;
+package origin.account;
 
 import java.util.List;
 import java.util.Set;
@@ -10,12 +10,13 @@ public class AccountRepository {
     private static ConcurrentHashMap<Integer, Long> accountMap;
 
     public AccountRepository(){
+
         accountMap = new ConcurrentHashMap<>();
     }
 
     public void insertMoney(int userId, long money){
 
-        if(accountMap.containsKey(userId)){
+        if(!accountMap.containsKey(userId)){
             accountMap.put(userId, 0L);
         }
 
@@ -29,15 +30,19 @@ public class AccountRepository {
 
     public List<String> getAllInfo(){
 
+        //TODO : 레포지토리에서는 엔트리셋만 리턴하고 아래의 가공로직은 서비스 계층에서 처리하도록.
+
         return accountMap.keySet().stream()
                 .map(key -> "["+ key +"]" + ": [" + accountMap.get(key)+ "] 원")
                 .collect(Collectors.toList());
     }
 
-    public List<String> getSubInfo(Set<Integer> userIdList){
+    public List<String> getSubInfo(Set<Integer> userIdSet){
+
+        //TODO : 레포지토리에서는 엔트리셋만 리턴하고 아래의 가공로직은 서비스 계층에서 처리하도록.
 
         return accountMap.keySet().stream()
-                .filter(key -> userIdList.contains(key))
+                .filter(key -> userIdSet.contains(key))
                 .map(key -> "["+ key +"]" + ": [" + accountMap.get(key)+ "] 원")
                 .collect(Collectors.toList());
     }

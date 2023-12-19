@@ -1,15 +1,15 @@
-package origin.account;
+package step1.account;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-public class AccountRepository {
+public class AccountRepositoryV1 {
 
     private static ConcurrentHashMap<Integer, Long> accountMap;
 
-    public AccountRepository(){
+    public AccountRepositoryV1(){
 
         accountMap = new ConcurrentHashMap<>();
     }

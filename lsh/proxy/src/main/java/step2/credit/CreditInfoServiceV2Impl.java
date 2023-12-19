@@ -1,13 +1,13 @@
 package step2.credit;
 
-public class CreditInfoServiceV1Impl implements CreditInfoService{
+public class CreditInfoServiceV2Impl implements CreditInfoService{
 
     private int creditScore;
 
-    public CreditInfoServiceV1Impl(int userId){
+    public CreditInfoServiceV2Impl(int userId){
 
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             System.out.println("userId : " + userId + " 의 신용정보를 조회해옵니다.");
             this.creditScore = 998;
         } catch (Exception e){

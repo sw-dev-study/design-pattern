@@ -6,12 +6,12 @@ import step1.credit.CreditInfoServiceV1;
 import java.util.List;
 
 //클라이언트가 접근하는 클래스 -> 퍼사드 패턴 적용.
-public class FinancialServiceV1 {
+public class FinancialServiceV1Impl implements FinancialService{
 
     private AccountServiceV1 accountService;
     private CreditInfoServiceV1 creditInfoService;
 
-    public FinancialServiceV1(AccountServiceV1 accountService, CreditInfoServiceV1 creditInfoService){
+    public FinancialServiceV1Impl(AccountServiceV1 accountService, CreditInfoServiceV1 creditInfoService){
         this.accountService = accountService;
         this.creditInfoService = creditInfoService;
     }

@@ -1,13 +1,13 @@
-package origin.credit;
+package step1.credit;
 
-public class CreditInfoService {
+public class CreditInfoServiceV1 {
 
     private int creditScore;
 
-    public CreditInfoService(int userId){
+    public CreditInfoServiceV1(int userId){
 
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             System.out.println("userId : " + userId + " 의 신용정보를 조회해옵니다.");
             this.creditScore = 998;
         } catch (Exception e){

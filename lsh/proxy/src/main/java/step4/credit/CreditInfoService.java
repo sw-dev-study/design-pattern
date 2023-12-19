@@ -1,4 +1,4 @@
-package step3.credit;
+package step4.credit;
 
 public interface CreditInfoService {
 

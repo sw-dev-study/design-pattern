@@ -5,11 +5,11 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-public class AccountRepositoryV1 {
+public class AccountRepositoryV2 {
 
     private static ConcurrentHashMap<Integer, Long> accountMap;
 
-    public AccountRepositoryV1(){
+    public AccountRepositoryV2(){
 
         accountMap = new ConcurrentHashMap<>();
     }

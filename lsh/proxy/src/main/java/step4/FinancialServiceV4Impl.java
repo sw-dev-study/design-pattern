@@ -1,18 +1,19 @@
-package step3;
+package step4;
 
-import step3.account.AccountServiceV3;
-import step3.credit.CreditInfoService;
+import step4.account.Account;
+import step4.account.AccountServiceV4;
+import step4.credit.CreditInfoService;
 
 import java.util.List;
 
 //클라이언트가 접근하는 클래스 -> 퍼사드 패턴 적용.
-public class FinancialServiceV3Impl implements FinancialService {
+public class FinancialServiceV4Impl implements FinancialService {
 
-    private AccountServiceV3 accountService;
+    private Account accountService;
     private CreditInfoService creditInfoService;
 
-    public FinancialServiceV3Impl(AccountServiceV3 accountService, CreditInfoService creditInfoService){
-        this.accountService = accountService;
+    public FinancialServiceV4Impl(Account account, CreditInfoService creditInfoService){
+        this.accountService = account;
         this.creditInfoService = creditInfoService;
     }
 
